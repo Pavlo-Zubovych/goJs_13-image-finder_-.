@@ -55,6 +55,16 @@ function clearArticlesContainer() {
   refs.articlesContainer.innerHTML = '';
 }
 
+// const io = new IntersectionObserver((entries, observer) => {
+//   entries.forEach(entry => {
+//     // if (entry.isIntersecting) {
+//     console.log('Observer');
+//     // }
+//   });
+// });
+
+// refs.oadMoreBtnLoader.forEach(photo => io.observe(photo));
+
 // window.scrollTo({
 //   top: document.documentElement.offsetHeight,
 //   behavior: 'smooth',
