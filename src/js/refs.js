@@ -4,6 +4,7 @@ const loadMoreBtn = document.querySelector('[data-action = load-more]');
 const loadMoreBtnLoader = loadMoreBtn.querySelector('.label');
 const loadMoreBtnSpinner = loadMoreBtn.querySelector('.spinner');
 
+const footerTeg = document.querySelector('.footer');
 const photoCard = document.querySelector('.photo-card');
 
 export default {
@@ -13,4 +14,5 @@ export default {
   loadMoreBtnLoader,
   loadMoreBtnSpinner,
   photoCard,
+  footerTeg,
 };

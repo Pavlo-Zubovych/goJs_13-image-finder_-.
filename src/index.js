@@ -11,21 +11,49 @@ const moreLoadBtn = {
     refs.loadMoreBtn.disabled = false;
     refs.loadMoreBtnLoader.textContent = 'Показати більше!';
     refs.loadMoreBtnSpinner.classList.add('is-hidden');
+    // refs.footerTeg.classList.add('is-hidden');
   },
 
   disabled() {
     refs.loadMoreBtn.disabled = true;
     refs.loadMoreBtnLoader.textContent = 'Загружаємо  ...  ... ...   ... ... ... ... . ...';
     refs.loadMoreBtnSpinner.classList.remove('is-hidden');
+    // refs.footerTeg.classList.remove('is-hidden');
   },
 
   show() {
     refs.loadMoreBtn.classList.remove('is-hidden');
+    refs.footerTeg.classList.remove('is-hidden');
   },
 };
 
 refs.searchForm.addEventListener('submit', rerchFormSubmitHandler);
-refs.loadMoreBtn.addEventListener('click', fetchArcticlesS);
+// refs.loadMoreBtn.addEventListener('click', fetchArcticlesS);
+
+const options = {
+  rootMargin: '50px',
+  threshold: 1.0,
+};
+
+const onEntry = (entries, observer) => {
+  entries.forEach(entry => {
+    // тут можно писать логику для проверки вхождения
+    fetchArcticlesS();
+    console.log('Observer1');
+  });
+};
+
+const io = new IntersectionObserver(onEntry, options);
+/*=> {
+  //   entries.forEach(entry => {
+  // if (entry.isIntersecting) {
+  fetchArcticlesS();
+  console.log('Observer1');
+  // }
+// });
+});*/
+
+io.observe(refs.footerTeg);
 
 function rerchFormSubmitHandler(event) {
   event.preventDefault();
@@ -55,13 +83,19 @@ function clearArticlesContainer() {
   refs.articlesContainer.innerHTML = '';
 }
 
-// const io = new IntersectionObserver((entries, observer) => {
+// const footerTeg = document.querySelector('.footer');
+
+// const io = new IntersectionObserver((entries, observe) => {
 //   entries.forEach(entry => {
 //     // if (entry.isIntersecting) {
-//     console.log('Observer');
+//     console.log('Observer1');
 //     // }
 //   });
 // });
+
+// io.observe(refs.footerTeg);
+
+// footerTeg.forEach(photo => io.observe(photo));
 
 // refs.oadMoreBtnLoader.forEach(photo => io.observe(photo));
 
