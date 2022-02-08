@@ -30,28 +30,27 @@ const moreLoadBtn = {
 refs.searchForm.addEventListener('submit', rerchFormSubmitHandler);
 // refs.loadMoreBtn.addEventListener('click', fetchArcticlesS);
 
+// const onEntry = (entries, observer) => {
+//   entries.forEach(entry => {
+//     // тут можно писать логику для проверки вхождения
+//     fetchArcticlesS();
+//     console.log('Observer1');
+//   });
+// };
+
 const options = {
-  rootMargin: '50px',
+  //   rootMargin: '50px',
   threshold: 1.0,
 };
 
-const onEntry = (entries, observer) => {
+const io = new IntersectionObserver((entries, options) => {
   entries.forEach(entry => {
-    // тут можно писать логику для проверки вхождения
-    fetchArcticlesS();
-    console.log('Observer1');
+    if (entry.isIntersecting) {
+      fetchArcticlesS();
+      console.log('Observer_go');
+    }
   });
-};
-
-const io = new IntersectionObserver(onEntry, options);
-/*=> {
-  //   entries.forEach(entry => {
-  // if (entry.isIntersecting) {
-  fetchArcticlesS();
-  console.log('Observer1');
-  // }
-// });
-});*/
+});
 
 io.observe(refs.footerTeg);
 

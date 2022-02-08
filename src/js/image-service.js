@@ -6,11 +6,8 @@ export default {
 
   fetchArcticles() {
     console.log(this.query);
-    if (this.query == '') {
-      console.log('Введіть дані для пошуку');
-      //   this.query = '8888888';
-    }
-    const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=12&key=${apiKey}`;
+
+    const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=8&key=${apiKey}`;
 
     return fetch(url)
       .then(response => response.json())
