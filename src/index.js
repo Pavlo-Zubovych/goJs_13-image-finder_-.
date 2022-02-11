@@ -37,6 +37,7 @@ refs.searchForm.addEventListener('submit', rerchFormSubmitHandler);
 //     console.log('Observer1');
 //   });
 // };
+//
 
 const options = {
   //   rootMargin: '50px',
