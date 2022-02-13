@@ -16,6 +16,24 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <style>
+      .simplescrollup__button {
+        position: fixed;
+        bottom: 3rem;
+        right: 3rem;
+        transition: 1s all;
+        border-radius: 2px;
+        padding: 4px;
+        background-color: rgb(90, 164, 250);
+        z-index: 10000;
+      }
+      .simplescrollup__button--show {
+        transform: translateX(0);
+      }
+      .simplescrollup__button--hide {
+        transform: translateX(120px);
+      }
+    </style>
   </head>
   <body>
     <form class="search-form js-search-form">
@@ -37,6 +55,16 @@
 
     <div class="footer is-hidden"><p>Зроблено в процесі навчання</p></div>
 
+    <a
+      href="#up"
+      duraction="1000"
+      height-hide="200"
+      easing="easeInOutQuad"
+      class="simplescrollup__button simplescrollup__button--hide"
+      >Вгору!</a
+    >
+
     <script src="./index.js"></script>
+    <script src="./js/simplescrollup.js"></script>
   </body>
 </html>
