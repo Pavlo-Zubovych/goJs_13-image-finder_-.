@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /**
-   * Show and hide button
+   * Show and hide button...
    */
   function isVisibled() {
     var heightHide = parseInt(buttonUp.getAttribute('height-hide')) || 100;
