@@ -110,3 +110,5 @@ document.addEventListener('DOMContentLoaded', function () {
   // Auto show and hide button
   window.addEventListener('scroll', isVisibled);
 });
+
+// Працює з ривками
